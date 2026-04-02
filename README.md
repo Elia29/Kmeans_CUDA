@@ -13,7 +13,7 @@ Questa implementazione sfrutta il parallelismo a livello di thread per velocizza
 ## Prerequisiti
 Per eseguire il progetto [kmeansCUDA.ipynb](kmeansCUDA.ipynb) in locale sfruttando la propria GPU NVIDIA, è necessario avere installato:
 1. Una GPU NVIDIA compatibile.
-2. CUDA Toolkit (per utilizzo il locale)
+2. CUDA Toolkit
 3. Compilatore C++ che supporti CUDA (come ad esempio `nvcc` installato dal CUDA Toolkit)
 
 Se non si dispone di una GPU NVIDIA è possibile eseguire il progetto [kmeansCUDA.ipynb](kmeansCUDA.ipynb) senza modifche utilizzando la GPU NVIDIA Tesla T4 fornita da Google Colab.
