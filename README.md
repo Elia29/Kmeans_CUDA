@@ -18,7 +18,7 @@ Per eseguire il progetto [kmeansCUDA.ipynb](kmeansCUDA.ipynb) in locale sfruttan
 
 Se non si dispone di una GPU NVIDIA è possibile eseguire il progetto [kmeansCUDA.ipynb](kmeansCUDA.ipynb) senza modifche utilizzando la GPU NVIDIA Tesla T4 fornita da Google Colab.
 
-## Setup e Utilizzo (Windows)
+## Setup e Utilizzo
 ### 1. Clonare la repository
 ```bash
 git clone Elia29/Kmeans_CUDA
