@@ -1,6 +1,7 @@
-# K-Means Clustering con OpenMP
+# K-Means Clustering con CUDA
 
-Questo progetto implementa l'algoritmo di clustering **K-Means** utilizzando un approccio di layout dati **Structure of Arrays (SoA)**, in linguaggio C++, parallelizzato utilizzando **OpenMP** per migliorare le prestazioni su architetture multi-core.
+Questo progetto implementa l'algoritmo di clustering **K-Means** utilizzando un approccio di layout dati **Structure of Arrays (SoA)**, in linguaggio C++, parallelizzato utilizzando **CUDA** per migliorare le prestazioni su architettura a parallelismo massivo (Massively Parallel Architecture) come le GPU.
+In questa implementazione è stato utilizzato Google Colab che fornisce una GPU Tesla T4.
 
 ## Descrizione
 L'algoritmo K-Means è uno dei più noti metodi di apprendimento non supervisionato per il partizionamento di un set di dati in $K$ gruppi (cluster). 
@@ -10,25 +11,22 @@ Questa implementazione sfrutta il parallelismo a livello di thread per velocizza
 3. L'aggiornamento della posizione dei centroidi.
 
 ## Prerequisiti
-Per compilare ed eseguire il progetto [kmeans2.cpp](kmeans2.cpp), è necessario avere installato:
-1. Un compilatore C++ che supporti OpenMP (come `gcc` o `clang`).
-2. Libreria di OpenMP
+Per compilare ed eseguire il progetto [kmeansCUDA.ipynb](kmeansCUDA.ipynb) in locale sfruttando la propria GPU NVIDIA, è necessario avere installato:
+1. Una GPU NVIDIA compatibile.
+2. CUDA Toolkit (per utilizzo il locale)
+3. Compilatore C++ che supporti CUDA (come ad esempio `nvcc` installato dal CUDA Toolkit)
+
+Se non si dispone di una GPU NVIDIA è possibile compilare ed eseguire il progetto [kmeansCUDA.ipynb](kmeansCUDA.ipynb) senza modifche utilizzando la GPU NVIDIA Tesla T4 fornita da Google Colab.
 
 ## Setup e Utilizzo (Windows)
 ### 1. Clonare la repository
 ```bash
-git clone Elia29/Kmeans-OpenMP
-cd Kmeans-OpenMP
+git clone Elia29/Kmeans_CUDA
+cd Kmeans_CUDA
 ```
-### 2. Compilare il programma
-```bash
-g++ -O3 -fopenmp kmeansOpenMP.cpp -o kmeans_OpenMP
-```
-Dove: `g++` è il compilatore; `-03` attiva il massimo livello di ottimizzazione. Senza questo, le istruzioni **#pragma omp simd** e il layout SoA non verrebbero sfruttati appieno; `-fopenmp` attiva la libreria OpenMP; `-o kmeans_OpenMP` nome del file eseguibile finale.
-
 ### 3. Eseguire il programma
 ```bash
-.\kmeans_OpenMP.exe
+[kmeansCUDA.cpp](kmeansCUDA.cpp)
 ```
 
 > [!NOTE]
@@ -39,7 +37,7 @@ Dove: `g++` è il compilatore; `-03` attiva il massimo livello di ottimizzazione
 
 ## Fonti
 Il dettaglio teorico dell'algoritmo e i risultati dei test di performance sono consultabili qui:
-**[Leggi l'articolo (PDF)](kmeansOpenMP.pdf)**
+**[Leggi l'articolo (PDF)](kmeansCUDA.pdf)**
 
 ## Licenza
 Questo progetto è distribuito sotto la licenza [MIT](LICENSE).
