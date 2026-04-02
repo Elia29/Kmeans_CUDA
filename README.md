@@ -26,7 +26,7 @@ cd Kmeans_CUDA
 ```
 ### 3. Eseguire il programma
 ```bash
-[kmeansCUDA.cpp](kmeansCUDA.cpp)
+kmeansCUDA.ipynb
 ```
 
 > [!NOTE]
